@@ -15,18 +15,20 @@
             padding: 20px;
             flex-direction: column;
         }
-        .mensaje-inicial {
+        .mensaje-inicial,
+        .carta {
             background: white;
             border-radius: 15px;
-            padding: 10px; /* Reducir padding */
+            padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
-            display: none; /* Ocultar inicialmente */
-            width: 400px; /* Ancho más pequeño */
+            display: none;
+            width: 90%; /* Cambiado a porcentaje */
+            max-width: 600px; /* Máximo ancho */
         }
         h1 {
             color: #d10068;
-            font-size: 20px; /* Tamaño de fuente reducido */
+            font-size: 18px; /* Ajustado */
             margin: 0;
         }
         .cargando {
@@ -35,36 +37,18 @@
             margin-top: 10px;
         }
         .carta {
-            background: linear-gradient(145deg, #ffffff, #e0e0e0);
-            border-radius: 15px;
-            padding: 20px;
-            width: 600px;
             max-height: 80vh;
             overflow-y: auto;
-            box-shadow: 10px 10px 20px #d1d1d1,
-                        -10px -10px 20px #ffffff;
-            position: relative;
-            display: none; /* Ocultar la carta inicialmente */
-        }
-        .carta:before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: radial-gradient(circle, rgba(255, 0, 150, 0.2), rgba(255, 0, 150, 0.1));
-            border-radius: 25px;
-            z-index: -1;
+            display: none;
         }
         p {
-            font-size: 16px;
+            font-size: 14px; /* Ajustado */
             line-height: 1.6;
             color: #333;
         }
         .fecha {
             text-align: right;
-            font-size: 14px;
+            font-size: 12px; /* Ajustado */
             color: #888;
             margin-bottom: 20px;
         }
@@ -83,14 +67,13 @@
         }
         .btn-consejo {
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 10px 15px; /* Ajustado */
             background-color: #d10068;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            font-size: 14px; /* Ajustado */
         }
         .btn-consejo:hover {
             background-color: #a4004f;
@@ -128,6 +111,19 @@
         }
         .btn-cerrar:hover {
             background-color: #a4004f;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 16px; /* Tamaño de fuente más pequeño para móviles */
+            }
+            p {
+                font-size: 12px; /* Tamaño de fuente más pequeño para móviles */
+            }
+            .btn-consejo {
+                padding: 8px 12px; /* Ajustado */
+                font-size: 12px; /* Ajustado */
+            }
         }
     </style>
     <script>
@@ -170,7 +166,6 @@
             El principal motivo por el cual te escribo, que estoy muy seguro que no sabes y es que hoy es una fecha muy especial, si señorita, no se me sorprenda. Un día como hoy tome la mejor decisión de mi vida. Hace dos años, el 26 de octubre del 2022, siendo un miércoles, dos personas muy conocidas por nosotros dos, pautaban un encuentro por primera vez. Así es, hace dos años mi niña nos veíamos por primera vez. En ese tiempo yo jugaba muy seguido micro, y ese día jugaba a las 6, eso para mi era muy sagrado. El motivo por el cual llegue tarde a nuestra primera cita fue mi indecisión, pero algo hizo que no jugara y fuera a verte. Aunque nos llovió ese día, eso paso por desapercibido, porque fue un día inolvidable para mí. Ese día es único, hasta el 2033 habrá de nuevo un 26 de octubre que sea un miércoles, si de aquí allá no estamos juntos con Matías y Alis, recuerda esa fecha, que yo te estaré pensando ese día.
             Ahora cuando llegue el 31, será un día aun mas doloroso para mi, cuando me acuerde del momento donde el niño nos dijo que hacíamos bonita pareja, y nos regalo un dulce. No puedo negarlo se me salen las lagrimas al estar escribiendo.
             Me expresabas que tu vida era muy aburrida, que lo que hacías, lo hacías porque te tocaba, mas no porque te gustaba ¿De eso que ha cambiado? Tu con 16 años, y yo ya con 21 años, no sabíamos la historia tan bonita que íbamos a escribir desde ese día hasta el día de hoy. Ya son dos años de muchos aprendizajes que me has dejado, perdón por los malos momentos y SIEMPRE recuérdame por los bellos momentos que pasamos. No te puedo decir que desde ese día te amo, seria una gran mentira de mi parte, pero si vi algo diferente en ti que me hizo quedarme. Quiero agradecerte una vez más por todo lo que has hecho por mí, por darme a conocer esta sensación de amar y esta sensación de sentir preocupación por alguien más, y me niego rotundamente a que nuestra historia se quede así; tengo la completa esperanza que seguiremos escribiendo y haciendo cosas muy bonitas.
-            
         </p>
 
         <p>
@@ -185,8 +180,6 @@
             Cuando se ama de verdad, no existe el tiempo,
             y te juro que no es el final del cuento.
             El destino no nos puede separar”
-            
-                        
         </p>
 
         <p class="firma">Con todo mi amor,<br>Tu pillino</p>
