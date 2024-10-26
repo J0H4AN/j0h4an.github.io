@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meet</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7e7e7;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            flex-direction: column;
+        }
+        .mensaje-inicial {
+            background: white;
+            border-radius: 15px;
+            padding: 10px; /* Reducir padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: none; /* Ocultar inicialmente */
+            width: 400px; /* Ancho más pequeño */
+        }
+        h1 {
+            color: #d10068;
+            font-size: 20px; /* Tamaño de fuente reducido */
+            margin: 0;
+        }
+        .cargando {
+            font-size: 14px; /* Tamaño de fuente reducido */
+            color: #888;
+            margin-top: 10px;
+        }
+        .carta {
+            background: linear-gradient(145deg, #ffffff, #e0e0e0);
+            border-radius: 15px;
+            padding: 20px;
+            width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 10px 10px 20px #d1d1d1,
+                        -10px -10px 20px #ffffff;
+            position: relative;
+            display: none; /* Ocultar la carta inicialmente */
+        }
+        .carta:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: radial-gradient(circle, rgba(255, 0, 150, 0.2), rgba(255, 0, 150, 0.1));
+            border-radius: 25px;
+            z-index: -1;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .fecha {
+            text-align: right;
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .firma {
+            text-align: right;
+            font-style: italic;
+            margin-top: 30px;
+            color: #d10068;
+        }
+        .imagen-romantica {
+            display: block;
+            margin: 20px auto 0;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn-consejo {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d10068;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn-consejo:hover {
+            background-color: #a4004f;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .btn-cerrar {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #d10068;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-cerrar:hover {
+            background-color: #a4004f;
+        }
+    </style>
+    <script>
+        // Función para mostrar la carta después de 10 segundos
+        function mostrarCarta() {
+            document.getElementById('carta').style.display = 'block';
+            document.getElementById('mensaje-inicial').style.display = 'none';
+        }
+
+        // Función para abrir el modal de consejo
+        function mostrarConsejo() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Iniciar el temporizador
+        window.onload = function() {
+            document.getElementById('mensaje-inicial').style.display = 'block';
+            document.getElementById('cargando').style.display = 'block';
+            setTimeout(mostrarCarta, 10000);
+        };
+    </script>
+</head>
+<body>
+    <div id="mensaje-inicial" class="mensaje-inicial">
+        <h1>Cada vez que haya un cielo bonito,<br>te recordaré.<br>Siempre irás conmigo</h1>
+        <img src="cielo.png" alt="Imagen romántica" class="imagen-romantica">
+        <p id="cargando" class="cargando">Cargando carta...</p>
+    </div>
+    
+    <div id="carta" class="carta">
+        <h1>Mi Querido Amor</h1>
+        <p class="fecha">26/10/2024</p>
+        <p>
+            Hola Jilibeth. Antes que todo, espero que todo este andando super bien, espero que tu piecito ya no te este doliendo, y que todo por tu casa ande super. Quiero pedirte disculpas por volver a buscarte de alguna o otra manera, pero tu me enseñaste a decir las cosas que siento, por ende, te tienes que aguantar, así que siéntate, y lee tranquilamente.
+            El principal motivo por el cual te escribo, que estoy muy seguro que no sabes y es que hoy es una fecha muy especial, si señorita, no se me sorprenda. Un día como hoy tome la mejor decisión de mi vida. Hace dos años, el 26 de octubre del 2022, siendo un miércoles, dos personas muy conocidas por nosotros dos, pautaban un encuentro por primera vez. Así es, hace dos años mi niña nos veíamos por primera vez. En ese tiempo yo jugaba muy seguido micro, y ese día jugaba a las 6, eso para mi era muy sagrado. El motivo por el cual llegue tarde a nuestra primera cita fue mi indecisión, pero algo hizo que no jugara y fuera a verte. Aunque nos llovió ese día, eso paso por desapercibido, porque fue un día inolvidable para mí. Ese día es único, hasta el 2033 habrá de nuevo un 26 de octubre que sea un miércoles, si de aquí allá no estamos juntos con Matías y Alis, recuerda esa fecha, que yo te estaré pensando ese día.
+            Ahora cuando llegue el 31, será un día aun mas doloroso para mi, cuando me acuerde del momento donde el niño nos dijo que hacíamos bonita pareja, y nos regalo un dulce. No puedo negarlo se me salen las lagrimas al estar escribiendo.
+            Me expresabas que tu vida era muy aburrida, que lo que hacías, lo hacías porque te tocaba, mas no porque te gustaba ¿De eso que ha cambiado? Tu con 16 años, y yo ya con 21 años, no sabíamos la historia tan bonita que íbamos a escribir desde ese día hasta el día de hoy. Ya son dos años de muchos aprendizajes que me has dejado, perdón por los malos momentos y SIEMPRE recuérdame por los bellos momentos que pasamos. No te puedo decir que desde ese día te amo, seria una gran mentira de mi parte, pero si vi algo diferente en ti que me hizo quedarme. Quiero agradecerte una vez más por todo lo que has hecho por mí, por darme a conocer esta sensación de amar y esta sensación de sentir preocupación por alguien más, y me niego rotundamente a que nuestra historia se quede así; tengo la completa esperanza que seguiremos escribiendo y haciendo cosas muy bonitas.
+            
+        </p>
+
+        <p>
+            Eres una persona muy bonita en todos los aspectos, con unos sentimientos increíbles, nunca dejes de ser esa persona noble. Quiero decirte también que te extraño mucho y al día de hoy no supero lo que estoy viviendo. Contigo no veía un presente, yo veía un futuro, por eso tenia que cerrar unas etapas para poder brindarte todo lo que te mereces. Me hubiera encantado que me hubieras esperado otro tiempo, pero así no sucedió y no puedo hacer nada. Te has convertido en una persona demasiado madura, sinceramente esta versión de ti me gusta más, y ya no te tengo. Y estoy seguro que esta versión mía te habría fascinado a ti. Se vienen cosas muy duras para ti, te falta vivir mucho mi niña, así que quiero expresarte que conmigo puedes contar para lo que sea, y para siempre. Aunque yo se que es muy difícil que me busques, desconfía hasta de tu sombra, conocerás muchas personas, pero no todas con buenas intenciones. Confío en que la vida nos pondrá otra vez en el camino y te demostrare que todo será diferente. 
+        </p>
+
+        <p>
+            Mi mayor tristeza es no saber si estas bien o estas mal, si fuiste al medico o no, si comiste, si está enferma, si te sientes sola, si dormiste bien, el no saber de ti me esta carcomiendo por dentro. La extraño muchooooo, y recuerda que siempre serás mi primer amor, y el amor de mi vida, jamás la olvidare, y siempre estaré orgulloso de ti. De acá para adelante tendrás muchas tristezas y quiero que seas fuerte, que no te dejes vencer y que luches por tus sueños, y recuerda que siempre con paciencia. Al momento de tomar decisiones mucha serenidad y siempre analizando bien las ventajas y las consecuencias que se puedan tener. Quiero que compres mas ropa elegante, no te imaginas lo super, hiper, mega hermosa que te ves así, pero no solo para ocasiones especiales, vístete todos los días elegante, levántate y maquíllate, péinate y ponte esa ropa elegante, acostúmbrate a andar elegante, sal y demuéstrale al mundo lo bella que eres. Ya son cuatro meses que empezaste a cambiar conmigo, y no hay día que no te piense, no hay día que no entre a mirar nuestro chat, y no hay día que piense si algún día volverás. Tienes la obligación de ser muy feliz, de hacer todo lo posible para que tu felicidad sea tu prioridad, si tu estas feliz, yo estaré feliz, y celebrare tus triunfos desde la distancia. 
+            Después de mi hubo vida, pero después de ti, ¿habrá vida? Es una pregunta que no me deja dormir, porque, aunque yo quiera son ya cuatro meses que sigo sintiendo la misma sensación y me da mucho miedo que esto siga así. Pero no quiero que te preocupes, ni sientas lastima, solo me estoy desahogando como tú me ensañaste. Se me acaban las excusas para escribirte o buscarte, así que si no te vuelvo a escribir, te prohíbo que pienses que te olvide, que en fechas como navidad, y en tu cumpleaños estaré celebrándolos contigo, nunca lo olvides. Te amo mucho mi niña, te extraño mucho. Aunque no quieras nos queda un encuentro, amenos que quieras volver a mis brazos, pero a penas tenga el valor iré por mi saco, te lo digo para que estes preparada. Nunca te hice promesas, porque por mi forma de ver la vida, hoy estamos, pero mañana no sabemos, entonces nunca hago promesas, y lo confirme con lo que paso, con la ida al salitre, que nos prometimos ir, y todo salió al revés. Pero en algún momento te dije que te iba a presentar en la casa, así que cuando quieras venir a ver como vivo, y conocer mi núcleo familiar, estas cordialmente invitada, el 7 de diciembre, mas o menos, se empieza decorar la navidad, por si quieres ayudar. 
+            Nunca dudes de mi amor, gracias por estos dos años, gracias por abrirme la puerta de tu vida. Tu dormilón te desea un bonito día, recuerda caminar derecha como toda una modelo, espalda derecha y mirada al frente, muchos éxitos, siempre estaré para ti.
+            “Voy a esperarte.
+            Cuando se ama de verdad, no existe el tiempo,
+            y te juro que no es el final del cuento.
+            El destino no nos puede separar”
+            
+                        
+        </p>
+
+        <p class="firma">Con todo mi amor,<br>Tu pillino</p>
+        
+        <button class="btn-consejo" onclick="mostrarConsejo()">Consejo del Día</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h1>El día que tengas ganas de verme,<br>no dudes ni un segundo,<br>a mí nunca se me quitan esas benditas ganas.</h1>
+            <img src="consejo.png" alt="Consejo del Día">
+            <button class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite tu fecha de cumpleaños</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select {
+            padding: 10px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            width: 120px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+    </style>
+    <script>
+        function verificarFecha() {
+            const dia = document.getElementById("dia").value;
+            const mes = document.getElementById("mes").value;
+
+            if (dia === "12" && mes === "Mayo") {
+                window.location.href = "meet.html";
+            } else {
+                alert("Fecha incorrecta");
+            }
+        }
+
+        function cargarDias() {
+            const diaSelect = document.getElementById("dia");
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                diaSelect.appendChild(option);
+            }
+        }
+
+        window.onload = cargarDias;
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Digite tu fecha de cumpleaños</h1>
+        <label for="dia">Día:</label>
+        <select id="dia" required>
+            <option value="" disabled selected>Seleccione un día</option>
+        </select>
+        <label for="mes">Mes:</label>
+        <select id="mes" required>
+            <option value="" disabled selected>Seleccione un mes</option>
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+        </select>
+        <button onclick="verificarFecha()">continuar</button>
+    </div>
+</body>
+</html>
